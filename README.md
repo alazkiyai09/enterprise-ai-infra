@@ -1,30 +1,53 @@
-# Enterprise AI Infrastructure (`enterprise-ai-infra`)
+<div align="center">
 
-AI infrastructure service for **data ingestion pipelines**, **embedding/vector processing**, and **LLM guardrails** (prompt-injection, jailbreak, PII, encoding, and output filtering). Designed for production workloads that need secure, observable AI operations.
+# 🏗️ Enterprise AI Infrastructure
 
-## Why This Repository
+### Ingestion Pipeline • Guardrails • Monitoring • Kubernetes
 
-Enterprise AI systems fail without reliable infra: ingestion, processing, storage, and safety controls. `enterprise-ai-infra` provides that foundation in a deployable API-oriented layout.
+[![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker)](https://www.docker.com/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes)](https://kubernetes.io/)
 
-## Core Features
+[Overview](#-overview) • [About](#-about) • [Topics](#-topics) • [API](#-api-surfaces) • [Quick Start](#-quick-start)
 
-- Pipeline routes for process, query, and task status
-- Guardrail routes for prompt and output risk controls
-- Ingestion and processing modules with queue-oriented structure
-- Embedding/vector interfaces for retrieval backends
-- Monitoring and metrics integration
-- Kubernetes manifests for production deployment baselines
+---
 
-## Project Structure
+Infrastructure backbone for enterprise AI workloads including **stream ingestion**, **processing orchestration**, **guardrails enforcement**, and **deployment-ready observability**.
 
-- `src/api/`: unified FastAPI app and infra route modules
-- `src/pipeline/`: ingestion, processing, embedding, storage, workers
-- `src/guardrails/`: prompt injection, jailbreak, PII, encoding, output filters
-- `src/monitoring/`: metrics, health, tracing helpers
-- `src/core/`: auth/security/rate-limit/error/secrets utilities
-- `k8s/`: deployment, service, and autoscaling manifests
+</div>
 
-## API Endpoints
+---
+
+## 🎯 Overview
+
+`enterprise-ai-infra` provides operational primitives for AI systems:
+
+- Data ingestion and processing orchestration
+- Prompt/output guardrails and safety checks
+- Metrics and runtime monitoring surfaces
+- Kubernetes deployment templates
+
+## 📌 About
+
+- Designed for robust AI pipeline operations at scale
+- Prioritizes secure boundaries and measurable runtime behavior
+- Integrates cleanly with agent and RAG repos
+
+## 🏷️ Topics
+
+`ai-infrastructure` `fastapi` `llm-guardrails` `kubernetes` `observability` `data-pipeline` `prompt-security` `enterprise-ai`
+
+## 🧩 Architecture
+
+- `src/api/`: infra API entrypoints
+- `src/pipeline/`: ingestion, workers, storage, embedding
+- `src/guardrails/`: prompt injection, jailbreak, PII, output checks
+- `src/monitoring/`: metrics and health modules
+- `src/core/`: shared security/runtime utilities
+- `k8s/`: deployment/service/autoscaling manifests
+
+## 🌐 API Surfaces
 
 - `POST /api/v1/pipeline/process`
 - `GET /api/v1/pipeline/status/{task_id}`
@@ -38,13 +61,16 @@ Enterprise AI systems fail without reliable infra: ingestion, processing, storag
 - `GET /health`
 - `GET /metrics`
 
-## Quick Start
+## ⚡ Quick Start
 
 ```bash
 pip install -r requirements.txt
 uvicorn src.api.main:app --reload
 ```
 
-## SEO Keywords
+## 🛠️ Tech Stack
 
-enterprise ai infrastructure, llm guardrails, ai pipeline service, fastapi ai ops, prompt injection detection api, pii detection service, vector pipeline backend
+**Core:** FastAPI, Pydantic, Uvicorn  
+**Infra:** Redis, Celery, queue-based workers  
+**Safety:** guardrail scanning and policy filters  
+**Deploy:** Docker, Kubernetes
